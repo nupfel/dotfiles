@@ -3,6 +3,7 @@ packages:
     taps:
       - nats-io/nats-tools
     brews:
+      - delta
       - fish
       - asdf
       - grc
@@ -28,6 +29,14 @@ packages:
   linux:
     apt:
       - fish
+      - grc
+      - ffmpeg
+      - asciinema
+      - psmisc
+      - htop
+      - gpg
+      - tmux
+      - git-delta
   omf:
     - osx
     - brew
