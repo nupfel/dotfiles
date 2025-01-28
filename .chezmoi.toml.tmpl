@@ -1,0 +1,12 @@
+[edit]
+    command = "code"
+    args = ["--wait"]
+
+[diff]
+    command = "delta"
+    pager = "delta"
+
+[[textconv]]
+    pattern = "**/*.plist"
+    command = "plutil"
+    args = ["-convert", "xml1", "-o", "-", "-"]

@@ -1,0 +1,15 @@
+[user]
+	email = tobias.kirschstein@sony.com
+	name = Tobias Kirschstein
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[maintenance]
+	repo = /Users/tkirschstein/src/nmtools
