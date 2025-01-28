@@ -1,0 +1,58 @@
+packages:
+  darwin:
+    taps:
+      - nats-io/nats-tools
+    brews:
+      - fish
+      - asdf
+      - grc
+      - starship
+      - uv
+      - jless
+      - ffmpeg
+      - asciinema
+      - agg
+      - pstree
+      - nats-io/nats-tools/nats
+      - htop
+      - gnu-sed
+      - ruff
+      - gpg
+      - tmux
+      - tmux-mem-cpu-load
+      - openssl@3
+    casks:
+    - ghostty
+    - nikitabobko/tap/aerospace
+    - font-cascadia-code-nf
+  linux:
+    apt:
+      - fish
+  omf:
+    - osx
+    - brew
+    - grc
+    - asdf
+  fisher:
+    - lilyball/nix-env.fish
+    - edc/bass
+    - jhillyerd/plugin-git
+  asdf:
+    plugins:
+      - python
+      - nodejs
+      - rust
+      - golang
+      - elixir
+
+# ghostty
+# pycharm
+# chrome
+# teams
+# aerospace
+# karabiner elements
+# caffeine
+# 1password
+# miro
+# slack
+# vscode

@@ -1,0 +1,6 @@
+{{- /* Go Template */ -}}
+#!/usr/bin/env fish
+
+{{ range .packages.asdf.plugins -}}
+asdf plugin-add {{ . }}
+{{ end -}}

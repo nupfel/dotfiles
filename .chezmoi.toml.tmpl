@@ -1,3 +1,4 @@
+{{- /* Go Template */ -}}
 [edit]
     command = "code"
     args = ["--wait"]
@@ -10,3 +11,10 @@
     pattern = "**/*.plist"
     command = "plutil"
     args = ["-convert", "xml1", "-o", "-", "-"]
+
+[data]
+    {{ if eq .chezmoi.username "tkirschstein" -}}
+    git_email = "tobias.kirschstein@sony.com"
+    {{- else -}}
+    git_email = "mail@lev.geek.nz"
+    {{- end -}}
