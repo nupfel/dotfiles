@@ -1,0 +1,13 @@
+background-opacity = 0.8
+background-blur-radius = 10
+background = 000000
+copy-on-select = true
+keybind = super+f=write_screen_file:open
+scrollback-limit = 1073741824
+macos-option-as-alt = right
+macos-window-shadow = false
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+auto-update = download
+#auto-update-channel = tip
+mouse-scroll-multiplier = 2
