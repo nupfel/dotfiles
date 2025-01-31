@@ -53,6 +53,14 @@ packages:
       - rust
       - golang
       - elixir
+    tools:
+      - name: python
+        version: 3.12.7
+      - name: elixir
+        version: latest
+  pip:
+    - virtualfish
+    - black[d]
 
 # ghostty
 # pycharm

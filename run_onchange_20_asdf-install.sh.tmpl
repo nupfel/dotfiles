@@ -4,3 +4,8 @@
 {{ range .packages.asdf.plugins -}}
 asdf plugin-add {{ . }}
 {{ end -}}
+
+{{ range .packages.asdf.tools -}}
+asdf install {{ .name }} {{ .version }}
+asdf global {{ .name }} {{ .version }}
+{{ end -}}
