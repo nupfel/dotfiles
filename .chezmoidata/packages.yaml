@@ -26,6 +26,7 @@ packages:
     - ghostty
     - nikitabobko/tap/aerospace
     - font-cascadia-code-nf
+
   linux:
     apt:
       - fish
@@ -37,15 +38,35 @@ packages:
       - gpg
       - tmux
       - git-delta
+      - cpupower-gui
+      # needed for asdf install python 
+      - libreadline-dev
+      - libssl-dev
+      - libbz2-dev
+      - zlib1g-dev
+      - libz3-dev
+      - libncurses-dev
+      - liblzma-dev
+      - uuid-dev
+      - libffi-dev
+      - libsqlite3-dev
+    snap:
+      - chromium
+      - code
+
   omf:
-    - osx
-    - brew
-    - grc
-    - asdf
+    all:
+      - grc
+      - asdf
+    darwin:
+      - osx
+      - brew
+
   fisher:
     - lilyball/nix-env.fish
     - edc/bass
     - jhillyerd/plugin-git
+
   asdf:
     plugins:
       - python
@@ -55,16 +76,22 @@ packages:
       - elixir
     tools:
       - name: python
-        version: 3.12.7
+        version: 3.12.9
       - name: elixir
         version: latest
+
   pip:
     - virtualfish
     - black[d]
 
+  virtualfish:
+    - auto_activation
+    - projects
+    - environment
+
 # ghostty
 # pycharm
-# chrome
+# chromium
 # teams
 # aerospace
 # karabiner elements
@@ -72,4 +99,3 @@ packages:
 # 1password
 # miro
 # slack
-# vscode

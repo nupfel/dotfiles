@@ -1,0 +1,5 @@
+{{- /* Go Template */ -}}
+#!/usr/bin/env fish
+
+vf install
+vf addplugins {{ range .packages.virtualfish }} {{ . }}{{ end }}

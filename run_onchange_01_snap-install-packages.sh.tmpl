@@ -1,0 +1,9 @@
+{{- /* Go Template */ -}}
+{{ if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env fish
+
+{{ range .packages.linux.snap -}}
+snap install {{ . }}
+{{ end -}}
+
+{{ end -}}

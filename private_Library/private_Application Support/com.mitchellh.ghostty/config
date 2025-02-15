@@ -11,3 +11,4 @@ macos-secure-input-indication = true
 auto-update = download
 #auto-update-channel = tip
 mouse-scroll-multiplier = 2
+font-family = "Cascadia Code NF"

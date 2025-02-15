@@ -2,4 +2,9 @@
 #!/usr/bin/env fish
 
 curl -sSL https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish -c 'source - --noninteractive'
-omf install {{ range .packages.omf }} {{ . }}{{ end }}
+omf install {{ range .packages.omf.all }} {{ . }}{{ end }}
+
+{{ if eq .chezmoi.os "darwin" -}}
+# install darwin specific OMF plugins
+omf install {{ range .packages.omf.darwin }} {{ . }}{{ end }}
+{{- end }}
