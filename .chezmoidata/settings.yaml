@@ -1,4 +1,5 @@
-gnome:
-  - /org/gnome/shell/extensions/quake-terminal/terminal-shortcut: "['F2']"
-  - /org/gnome/shell/extensions/quake-terminal/vertical-size: 95
-  - /org/gnome/shell/extensions/quake-terminal/terminal-id: 'com.mitchellh.ghostty.desktop'
+settings:
+  gnome:
+    - /org/gnome/shell/extensions/quake-terminal/terminal-shortcut: "['F2']"
+    - /org/gnome/shell/extensions/quake-terminal/vertical-size: 95
+    - /org/gnome/shell/extensions/quake-terminal/terminal-id: 'com.mitchellh.ghostty.desktop'
