@@ -1,5 +1,5 @@
 {{- /* Go Template */ -}}
-#!/bin/bash
+#!/usr/bin/env fish
 
 pip install {{ range .packages.pip.all }} {{ . }}{{ end }}
 
