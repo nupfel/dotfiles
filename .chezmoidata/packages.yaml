@@ -59,7 +59,7 @@ packages:
   omf:
     all:
       - grc
-      # - asdf
+      - asdf
     darwin:
       - osx
       - brew

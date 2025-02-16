@@ -2,10 +2,12 @@
 #!/usr/bin/env fish
 
 {{ range .packages.asdf.plugins -}}
-asdf plugin add {{ . }}
+asdf plugin-add {{ . }}
+#asdf plugin add {{ . }} # asdf >= 0.16.0
 {{ end -}}
 
 {{ range .packages.asdf.tools -}}
 asdf install {{ .name }} {{ .version }}
-asdf set -u {{ .name }} {{ .version }}
+asdf global {{ .name }} {{ .version }}
+#asdf set -u {{ .name }} {{ .version }} # asdf >= 0.16.0
 {{ end -}}
