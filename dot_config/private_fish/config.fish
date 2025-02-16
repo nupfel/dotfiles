@@ -10,8 +10,8 @@ if test -d /opt/pkissh
   fish_add_path --global --move --path /opt/pkissh/bin
 end
 
-if test -d $HOME/.asdf
-  source $HOME/.asdf/asdf.fish
+if type asdf
+  asdf completion fish | source
 end
 
 export PYTHONPATH=.

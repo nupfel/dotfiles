@@ -2,10 +2,10 @@
 #!/usr/bin/env fish
 
 {{ range .packages.asdf.plugins -}}
-asdf plugin-add {{ . }}
+asdf plugin add {{ . }}
 {{ end -}}
 
 {{ range .packages.asdf.tools -}}
 asdf install {{ .name }} {{ .version }}
-asdf global {{ .name }} {{ .version }}
+asdf set -u {{ .name }} {{ .version }}
 {{ end -}}

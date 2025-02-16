@@ -51,6 +51,7 @@ packages:
       - uuid-dev
       - libffi-dev
       - libsqlite3-dev
+      - tk-dev
     snap:
       - chromium
       - code
@@ -58,7 +59,7 @@ packages:
   omf:
     all:
       - grc
-      - asdf
+      # - asdf
     darwin:
       - osx
       - brew
@@ -80,7 +81,7 @@ packages:
       - name: python
         version: 3.12.9
       - name: elixir
-        version: latest
+        version: 1.18.2-otp-27
 
   pip:
     all:

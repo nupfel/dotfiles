@@ -4,12 +4,10 @@
 
 sudo apt install --yes {{ range .packages.linux.apt }} {{ . }}{{ end }}
 
-# install asdf via git
-[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v{{ .packages.asdf.version }}
-
-# asdf completions link
-mkdir -p ~/.config/fish/completions &&
-ln -sf ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+# install asdf via github release
+[ type asdf ] || curl -sSLO https://github.com/asdf-vm/asdf/releases/latest/download/asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
+tar xvzf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
+sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf
 
 # install starship
 curl -sSL https://starship.rs/install.sh | sh -s -- --yes
