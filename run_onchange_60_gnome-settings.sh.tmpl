@@ -2,8 +2,8 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-{{ range .packages.linux.snap -}}
-snap install {{ . }}
+{{ range .settings.gnome -}}
+dconf write {{ .key }} {{ .value }}
 {{ end -}}
 
 {{ end -}}

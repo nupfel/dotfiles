@@ -1,4 +1,8 @@
 {{- /* Go Template */ -}}
-#!/usr/bin/env fish
+#!/bin/bash
 
-pip install {{ range .packages.pip }} {{ . }}{{ end }}
+pip install {{ range .packages.pip.all }} {{ . }}{{ end }}
+
+{{ if eq .chezmoi.os "linux" -}}
+pip install {{ range .packages.pip.linux }} {{ . }}{{ end }}
+{{ end -}}

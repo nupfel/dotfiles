@@ -39,6 +39,7 @@ packages:
       - tmux
       - git-delta
       - cpupower-gui
+      - gnome-shell-extension-manager
       # needed for asdf install python 
       - libreadline-dev
       - libssl-dev
@@ -68,6 +69,7 @@ packages:
     - jhillyerd/plugin-git
 
   asdf:
+    version: 0.16.2
     plugins:
       - python
       - nodejs
@@ -81,13 +83,19 @@ packages:
         version: latest
 
   pip:
-    - virtualfish
-    - black[d]
+    all:
+      - virtualfish
+      - black[d]
+    linux:
+      - gnome-extensions-cli
 
   virtualfish:
     - auto_activation
     - projects
     - environment
+
+  gnome-extensions:
+    - quake-terminal@diegodario88.github.io
 
 # ghostty
 # pycharm

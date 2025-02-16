@@ -2,8 +2,9 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-{{ range .packages.linux.snap -}}
-snap install {{ . }}
+{{ range .packages.linux.apt -}}
+gext install {{ . }}
+gext enable {{ . }}
 {{ end -}}
 
 {{ end -}}
