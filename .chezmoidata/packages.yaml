@@ -94,7 +94,7 @@ packages:
     - projects
     - environment
 
-  gnome-extensions:
+  gnome_extensions:
     - quake-terminal@diegodario88.github.io
 
 # ghostty

@@ -2,7 +2,7 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-{{ range .packages.gnome-extensions -}}
+{{ range .packages.gnome_extensions -}}
 gext install {{ . }}
 gext enable {{ . }}
 {{ end -}}
