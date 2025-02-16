@@ -4,5 +4,6 @@
 pip install {{ range .packages.pip.all }} {{ . }}{{ end }}
 
 {{ if eq .chezmoi.os "linux" -}}
+# install linux specific python packages
 pip install {{ range .packages.pip.linux }} {{ . }}{{ end }}
 {{ end -}}
