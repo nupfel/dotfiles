@@ -3,7 +3,9 @@
 #!/bin/bash
 
 {{ range .settings.gnome -}}
-dconf write {{ .key }} {{ .value }}
+{{ range $k, $v := . -}}
+dconf write {{ $k }} {{ $v | quote }}
+{{ end -}}
 {{ end -}}
 
 {{ end -}}
