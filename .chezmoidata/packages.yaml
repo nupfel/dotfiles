@@ -23,9 +23,11 @@ packages:
       - tmux-mem-cpu-load
       - openssl@3
     casks:
-    - ghostty
-    - nikitabobko/tap/aerospace
-    - font-cascadia-code-nf
+      - ghostty
+      - nikitabobko/tap/aerospace
+      - font-cascadia-code-nf
+      - karabiner-elements
+      - caffeine
 
   linux:
     apt:
@@ -40,6 +42,7 @@ packages:
       - git-delta
       - cpupower-gui
       - gnome-shell-extension-manager
+
       # needed for asdf install python 
       - libreadline-dev
       - libssl-dev
@@ -98,13 +101,14 @@ packages:
   gnome_extensions:
     - quake-terminal@diegodario88.github.io
 
-# ghostty
-# pycharm
-# chromium
-# teams
-# aerospace
-# karabiner elements
-# caffeine
-# 1password
-# miro
-# slack
+# TODO:
+# - add freebsd support
+# - packages on linux:
+#   - miro
+#   - slack
+# - packages on macOS:
+#   - pycharm
+#   - chromium
+#   - 1password
+#   - miro
+#   - slack
