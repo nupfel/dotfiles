@@ -8,7 +8,9 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 # temporarily setup SHELL for homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+export HOMEBREW_BUNDLE_NO_LOCK=1
+
+brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
 tap {{ . | quote }}
 {{ end -}}
