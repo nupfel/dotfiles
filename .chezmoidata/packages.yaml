@@ -22,6 +22,8 @@ packages:
       - tmux
       - tmux-mem-cpu-load
       - openssl@3
+      - 1password-cli
+      - sshpass
     casks:
       - ghostty
       - nikitabobko/tap/aerospace
