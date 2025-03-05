@@ -29,7 +29,7 @@ packages:
       - nikitabobko/tap/aerospace
       - font-cascadia-code-nf
       - karabiner-elements
-      - caffeine
+#      - caffeine # currently older version than manual install 1.1.3 vs 1.5
 
   linux:
     apt:
@@ -64,7 +64,6 @@ packages:
   omf:
     all:
       - grc
-      - asdf
     darwin:
       - osx
       - brew
@@ -75,7 +74,7 @@ packages:
     - jhillyerd/plugin-git
 
   asdf:
-    version: 0.16.2
+    version: 0.16.5
     plugins:
       - python
       - nodejs

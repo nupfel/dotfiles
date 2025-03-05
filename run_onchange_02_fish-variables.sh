@@ -1,3 +1,9 @@
 #!/usr/bin/env fish
 
-set -U fish_user_paths ~/bin $fish_user_paths
+fish_add_path --move ~/.asdf/shims
+fish_add_path --move ~/bin
+
+# weird custom ssh for work
+if test -d /opt/pkissh
+  fish_add_path --move /opt/pkissh/bin
+end
