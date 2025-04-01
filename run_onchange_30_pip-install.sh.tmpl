@@ -7,3 +7,5 @@ pip install {{ range .packages.pip.all }} {{ . }}{{ end }}
 # install linux specific python packages
 pip install {{ range .packages.pip.linux }} {{ . }}{{ end }}
 {{ end -}}
+
+asdf reshim
