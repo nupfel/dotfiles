@@ -5,10 +5,12 @@
 sudo apt install --yes {{ range .packages.linux.apt }} {{ . }}{{ end }}
 
 # install asdf via github release
-type asdf &> /dev/null || curl -sSLO https://github.com/asdf-vm/asdf/releases/latest/download/asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
-tar xvzf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
-sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf
+if begin not type asdf &> /dev/null; or asdf --version | string match -r "{{ .packages.asdf.version }}"; end
+    curl -sSLO https://github.com/asdf-vm/asdf/releases/latest/download/asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
+    tar xvzf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
+    sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf
+end
 
 # install starship
-curl -sSL https://starship.rs/install.sh | sh -s -- --yes
+curl -sSL https://starship.rs/install.sh | sh -s -- --yes >/dev/null
 {{ end -}}
