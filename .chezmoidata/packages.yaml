@@ -61,7 +61,7 @@ packages:
       - tk-dev
     snap:
       - chromium
-      - code
+#      - code
 
   omf:
     all:
