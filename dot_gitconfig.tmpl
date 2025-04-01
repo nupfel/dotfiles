@@ -1,6 +1,7 @@
 {{- /* Go Template */ -}}
 [core]
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol,tab-in-indent
+	pager = delta
 
 [user]
 	email = {{ .git_email }}
@@ -65,10 +66,19 @@
 
 [merge]
 	ff = only
+	conflictStyle = zdiff3
 
 [remote "origin"]
 	fetch = +refs/pr/*/head:refs/remotes/pull_requests/*
 	fetch = +refs/mr/*/head:refs/remotes/merge-requests/*
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    syntax-theme = Visual Studio Dark+
 
 [color]
 	ui = true
