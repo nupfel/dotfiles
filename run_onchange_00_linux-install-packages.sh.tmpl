@@ -4,6 +4,9 @@
 
 sudo apt install --yes {{ range .packages.linux.apt }} {{ . }}{{ end }}
 
+# install ghostty manually because it's not in upstream yet
+curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh | bash
+
 # install asdf via github release
 if [ type asdf &> /dev/null ] || [[ ! "$(asdf --version)" =~ {{ .packages.asdf.version }} ]]
 then
