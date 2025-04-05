@@ -10,11 +10,13 @@ curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/instal
 # install asdf via github release
 if [ type asdf &> /dev/null ] || [[ ! "$(asdf --version)" =~ {{ .packages.asdf.version }} ]]
 then
+    # delete old < 0.16 ~/.asdf
+    [ -f ~/.asdf/bin/asdf ] && rm -rf ~/.asdf
     curl -sSLO https://github.com/asdf-vm/asdf/releases/download/v{{ .packages.asdf.version }}/asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
     tar xvzf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
     sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf
 fi
 
 # install starship
-curl -sSL https://starship.rs/install.sh | sh -s -- --yes >/dev/null
+type starship &> /dev/null || curl -sSL https://starship.rs/install.sh | sh -s -- --yes >/dev/null
 {{ end -}}
