@@ -14,7 +14,8 @@ then
     [ -f ~/.asdf/bin/asdf ] && rm -rf ~/.asdf
     curl -sSLO https://github.com/asdf-vm/asdf/releases/download/v{{ .packages.asdf.version }}/asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
     tar xvzf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz &&
-    sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf
+    sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf &&
+    rm asdf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz
 fi
 
 # install starship
