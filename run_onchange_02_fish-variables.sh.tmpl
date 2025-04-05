@@ -1,0 +1,15 @@
+#!/usr/bin/env fish
+
+fish_add_path --move ~/.asdf/shims
+fish_add_path --move ~/bin
+
+# weird custom ssh for work
+if test -d /opt/pkissh
+  fish_add_path --move /opt/pkissh/bin
+end
+
+{{ range .completions -}}
+if type {{ . }} &> /dev/null
+  test -f ~/.config/fish/completions/{{ . }}.fish || {{ . }} completion fish > ~/.config/fish/completions/{{ . }}.fish
+end
+{{ end -}}
