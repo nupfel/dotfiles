@@ -23,9 +23,9 @@ packages:
       - tmux
       - tmux-mem-cpu-load
       - openssl@3
-      - 1password-cli
       - sshpass
     casks:
+      - 1password-cli
       - ghostty
       - nikitabobko/tap/aerospace
       - font-cascadia-code-nf
