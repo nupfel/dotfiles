@@ -3,10 +3,13 @@
 #!/bin/bash
 
 # install Homebrew
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! type brew &> /dev/null
+then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# temporarily setup SHELL for homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+    # temporarily setup SHELL for homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 export HOMEBREW_BUNDLE_NO_LOCK=1
 
