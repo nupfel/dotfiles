@@ -93,6 +93,7 @@ packages:
     all:
       - virtualfish
       - black[d]
+      - argcomplete
     linux:
       - gnome-extensions-cli
 
