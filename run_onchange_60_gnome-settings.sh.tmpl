@@ -4,7 +4,7 @@
 
 {{ range .settings.gnome -}}
 {{ range $k, $v := . -}}
-dconf write {{ $k }} {{ $v | quote }}
+dconf write {{ $k }} {{ $v | quote }} || true
 {{ end -}}
 {{ end -}}
 
