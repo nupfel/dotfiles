@@ -14,7 +14,7 @@ if status is-interactive
     if not test -f $ARGCOMPLETE_LIST
         echo "initialising $ARGCOMPLETE_LIST"
         for file in $PATH/*
-            if begin file -bLI $file | head -n 1 | grep -q "text/x-script.python"
+            if begin file -bL --mime-type $file | head -n 1 | grep -q "text/x-script.python"
                 and head -n 3 $file 2>/dev/null | fgrep -q ARGCOMPLETE
             end
                 echo (basename $file) >&2
