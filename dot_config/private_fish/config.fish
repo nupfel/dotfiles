@@ -28,6 +28,4 @@ if status is-interactive
             register-python-argcomplete -s fish $script | source
         end < $ARGCOMPLETE_LIST
     end
-
-    export PYTHONPATH=.
 end
