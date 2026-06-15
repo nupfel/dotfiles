@@ -75,6 +75,7 @@ packages:
       - starship
       - docker
       - docker-compose
+      - pycharm-community-edition
 
       # needed for asdf install python 
       - tk
