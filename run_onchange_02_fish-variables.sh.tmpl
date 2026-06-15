@@ -2,6 +2,7 @@
 
 fish_add_path --move ~/.asdf/shims
 fish_add_path --move ~/bin
+alias --save ls "ls --color=always"
 
 {{ range .completions -}}
 if type {{ . }} &> /dev/null

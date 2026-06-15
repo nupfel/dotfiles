@@ -15,7 +15,6 @@ packages:
       - agg
       - pstree
       - nats-io/nats-tools/nats
-      - htop
       - btop
       - gnu-sed
       - ruff
@@ -38,14 +37,15 @@ packages:
       - grc
       - ffmpeg
       - asciinema
-      - psmisc
-      - htop
+      - psmisc # pstree
       - btop
       - gpg
       - tmux
       - git-delta
       - cpupower-gui
       - gnome-shell-extension-manager
+      - ghostty
+      - starship
 
       # needed for asdf install python 
       - libreadline-dev
@@ -59,9 +59,28 @@ packages:
       - libffi-dev
       - libsqlite3-dev
       - tk-dev
+    pacman:
+      - fish
+      - grc
+      - ffmpeg
+      - asciinema
+      - psmisc # pstree
+      - btop
+      - gnupg
+      - tmux
+      - git-delta
+      - cpupower-gui
+      - code
+      - ghostty
+      - starship
+      - docker
+      - docker-compose
+
+      # needed for asdf install python 
+      - tk
     snap:
-      - chromium
-#      - code
+    #  - chromium
+    #  - code
 
   omf:
     all:
@@ -76,7 +95,7 @@ packages:
     - jhillyerd/plugin-git
 
   asdf:
-    version: 0.16.5
+    version: 0.19.0
     plugins:
       - python
       - nodejs
@@ -85,22 +104,15 @@ packages:
       - elixir
     tools:
       - name: python
-        version: 3.12.9
-      - name: elixir
-        version: 1.18.2-otp-27
+        version: latest
+      # - name: elixir
+      #   version: 1.18.2-otp-27
 
   pip:
     all:
-      - virtualfish
-      - black[d]
       - argcomplete
     linux:
       - gnome-extensions-cli
-
-  virtualfish:
-    - auto_activation
-    - projects
-    - environment
 
   gnome_extensions:
     - quake-terminal@diegodario88.github.io
@@ -112,7 +124,5 @@ packages:
 #   - slack
 # - packages on macOS:
 #   - pycharm
-#   - chromium
-#   - 1password
 #   - miro
 #   - slack

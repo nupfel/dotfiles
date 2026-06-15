@@ -2,10 +2,13 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-sudo apt install --yes {{ range .packages.linux.apt }} {{ . }}{{ end }}
+{{ $os_id := .chezmoi.osRelease.idLike -}}
 
-# install ghostty manually because it's not in upstream yet
-curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh | bash
+{{ if eq $os_id "debian" -}}
+sudo apt install --yes {{ range .packages.linux.apt }} {{ . }}{{ end }}
+{{ else if eq $os_id "arch" -}}
+sudo pacman -S --noconfirm --needed {{ range .packages.linux.pacman }} {{ . }}{{ end }}
+{{ end -}}
 
 # install asdf via github release
 if [ type asdf &> /dev/null ] || [[ ! "$(asdf --version)" =~ {{ .packages.asdf.version }} ]]
@@ -17,7 +20,4 @@ then
     sudo install -m 755 -o root -g root asdf /usr/local/bin/asdf &&
     rm asdf asdf-v{{ .packages.asdf.version }}-linux-amd64.tar.gz
 fi
-
-# install starship
-type starship &> /dev/null || curl -sSL https://starship.rs/install.sh | sh -s -- --yes >/dev/null
 {{ end -}}
