@@ -9,3 +9,7 @@ if type {{ . }} &> /dev/null
   test -f ~/.config/fish/completions/{{ . }}.fish || {{ . }} completion fish > ~/.config/fish/completions/{{ . }}.fish
 end
 {{ end -}}
+
+# uv
+test -f ~/.config/fish/completions/uv.fish || uv generate-shell-completion fish > ~/.config/fish/completions/uv.fish
+test -f ~/.config/fish/completions/uvx.fish || uvx --generate-shell-completion fish > ~/.config/fish/completions/uvx.fish

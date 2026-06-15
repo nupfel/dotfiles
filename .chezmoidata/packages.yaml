@@ -23,6 +23,7 @@ packages:
       - tmux-mem-cpu-load
       - openssl@3
       - sshpass
+      - uv
     casks:
       - 1password-cli
       - ghostty
@@ -76,6 +77,7 @@ packages:
       - docker
       - docker-compose
       - pycharm-community-edition
+      - uv
 
       # needed for asdf install python 
       - tk
